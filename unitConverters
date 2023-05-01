@@ -1,0 +1,26 @@
+//functions to convert various units from standard to metric and so on
+
+//Farenheit to Celsius equations
+//TODO: Unit testing and debugging
+
+function tempConvert(temp, unit, target){
+  if (unit == "celsius"){
+    if (target == "kelvin"){
+      temp = temp - 273.15;
+    } else if (target == "farenheit"){
+      temp = (5/9) * (temp-32);
+    }
+  } else if (unit == "kelvin"){
+    if (target == "celsius"){
+      temp = temp + 273.15;
+    } else if (target == "farenheit"){
+      temp = ((temp + 273.15)*(9/5))+32;
+    }
+  } else if (unit == "farenheit"){
+    if (target == "celsius"){
+      temp = (5/9) * (temp-32);
+    } else if (target == "kelvin"){
+      temp = ((5/9) * (temp-32)) - 273.15;
+    }
+  }
+}
