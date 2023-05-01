@@ -1,26 +1,34 @@
 //functions to convert various units from standard to metric and so on
 
-//Farenheit to Celsius equations
+//Farenheit to Celsius equations fixed
 //TODO: Unit testing and debugging
 
 function tempConvert(temp, unit, target){
   if (unit == "celsius"){
     if (target == "kelvin"){
       temp = temp - 273.15;
+      return temp;
     } else if (target == "farenheit"){
-      temp = (5/9) * (temp-32);
+      temp = (9/5) * temp + 32;
+      return temp;
     }
   } else if (unit == "kelvin"){
     if (target == "celsius"){
       temp = temp + 273.15;
+      return temp;
     } else if (target == "farenheit"){
       temp = ((temp + 273.15)*(9/5))+32;
+      return temp;
     }
   } else if (unit == "farenheit"){
     if (target == "celsius"){
       temp = (5/9) * (temp-32);
+      return temp;
     } else if (target == "kelvin"){
       temp = ((5/9) * (temp-32)) - 273.15;
+      return temp;
     }
   }
 }
+
+console.log(tempConvert(-173.15, "kelvin", "farenheit"))
