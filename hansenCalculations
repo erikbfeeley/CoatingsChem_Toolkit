@@ -1,0 +1,13 @@
+//collection of equations related to Hansen Solubility Parameter equations
+
+//calculates cohesive energy from dispersion, polar, and hydrogen bonding energies
+function cohesiveEnergyBonds(dispersionEnergy, polarEnergy, hydrogenBondEnergy){
+   let cohesiveEnergy = dispersionEnergy + polarEnergy + hydrogenBondEnergy;
+   return cohesiveEnergy;
+}
+
+//calculates latent heat of vaporization from universal gas constant R and temp in Kelvin K
+function cohesiveEnergyHvap(heatOfVaporization, temp){
+  let cohesiveEnergy = heatOfVaporization-(R*temp);
+  return cohesiveEnergy;
+}
